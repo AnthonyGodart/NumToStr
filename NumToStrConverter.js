@@ -124,11 +124,9 @@ function convertMillions(value) {
             break;
         case (million < 100) : 
             prefix = convertTens(million);
-            console.log(prefix);
             break;
         case (million >= 100) :
             prefix = convertHundreds(million);
-            console.log(prefix);
             break;
         default :
             return;
@@ -149,11 +147,9 @@ function convertBillions(value) {
             break;
         case (billion < 100) : 
             prefix = convertTens(billion);
-            console.log(prefix);
             break;
         case (billion >= 100) :
             prefix = convertHundreds(billion);
-            console.log(prefix);
             break;
         default :
             return;
@@ -190,7 +186,8 @@ function handleParticle(test) {
     }
 }
 
-/* EXEMPLES D'UTILISATION */
+/* ------------------- EXEMPLES D'UTILISATION ------------------- */
+
 /* Un-comment wished line */
 //const numbers = [12370, 12371, 12372, 12373, 12374, 12375, 12376, 12377, 12378, 12379];
 //const numbers = [12380, 12381, 12382, 12383, 12384, 12385, 12386, 12387, 12388, 12389];
@@ -198,9 +195,15 @@ function handleParticle(test) {
 //const numbers = [70000, 71000, 78000, 80000, 81000, 88000, 90000, 91000, 98000];
 //const numbers = [99999, 100000, 123000, 256000, 871000];
 //const numbers = [34.01, 34.02];
+//const numbers = [40958234]
 const numbers = [31, 71, 80, 88, 90, 126.87, 200, 398.21, 13278, 543906, 1234567, 874261593, 2094857394, 436789156621]
+
+function Data(numericValue, stringConversion) {
+    this.numericValue = numericValue;
+    this.stringConversion = stringConversion;
+}
+
 numbers.forEach(number => {
-  const answer= convertNumToStr(number);
-  console.log(number)
-  console.log(answer)
-})
+  const answer = new Data(number, convertNumToStr(number));
+  console.table(answer)
+});
