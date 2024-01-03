@@ -4,6 +4,8 @@ I created this code originally for Google Sheet use, as a macro to convert a num
 
 Supported language is french only as this was the only one I needed.
 
+Warning !!! Number limit is 999 999 999 999,99 ( english version : 999,999,999,999.99 )
+
 
 ## How to use guide
 
