@@ -196,14 +196,14 @@ function handleParticle(test) {
 //const numbers = [99999, 100000, 123000, 256000, 871000];
 //const numbers = [34.01, 34.02];
 //const numbers = [40958234]
-const numbers = [31, 71, 80, 88, 90, 126.87, 200, 398.21, 13278, 543906, 1234567, 874261593, 2094857394, 436789156621]
+// const numbers = [31, 71, 80, 88, 90, 126.87, 200, 398.21, 13278, 543906, 1234567, 874261593, 2094857394, 436789156621]
 
-function Data(numericValue, stringConversion) {
-    this.numericValue = numericValue;
-    this.stringConversion = stringConversion;
-}
+// function Data(numericValue, stringConversion) {
+//     this.numericValue = numericValue;
+//     this.stringConversion = stringConversion;
+// }
 
-numbers.forEach(number => {
-  const answer = new Data(number, convertNumToStr(number));
-  console.table(answer)
-});
+// numbers.forEach(number => {
+//   const answer = new Data(number, convertNumToStr(number));
+//   console.table(answer)
+// });
