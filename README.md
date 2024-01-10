@@ -16,6 +16,7 @@ If you often find the need to convert numeric values to strings in your Google S
 6. Return to your Google Sheet document.
 7. Again, go to the Extension menu, choose Macros, and import the macro associated with the function you added to the script. You should see the "NUMTOSTR" function listed.
 8. You can now use the function by typing `=NUMTOSTR(-SelectedCell-)` in the desired cell.
+9. If you need to change **CAPITALIZEFIRST** status, just rerun steps 2. and 4. and save.
 
 **Notes:** 
 
