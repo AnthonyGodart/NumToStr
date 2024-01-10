@@ -15,7 +15,7 @@ class TestCase {
         } catch (error) {
             console.error('F', this.input, error.message);
         }
-    }
+    };
 }
 
 const testCasesList = [
@@ -38,6 +38,6 @@ const testCasesList = [
     new TestCase(436789156621, 'Quatre-Cent-Trente-Six-Milliards-Sept-Cent-Quatre-Vingt-Neuf-Millions-Cent-Cinquante-Six-Mille-Six-Cent-Vingt-Et-Un Euro')
 ];
 
-testCasesList.forEach((testCase, index) => {
+testCasesList.forEach((testCase) => {
     testCase.runTest();
 });
