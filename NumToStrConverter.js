@@ -3,7 +3,7 @@
  * Fonction principale à utiliser comme macro dans Google Sheets.
  *
  * @param {number} number - Le nombre à convertir. Limité à 999 999 999 999,99
- * @param {boolean} capitalizeFirst -   TRUE si la première lettre doit être en majuscule
+ * @param {boolean} CAPITALIZE -   TRUE si la première lettre doit être en majuscule
  *                                      FALSE si tout doit être en minuscules
  * @returns {string} - La représentation en lettres du nombre.
  */
@@ -13,10 +13,12 @@ const TEENS = ['Dix', 'Onze', 'Douze', 'Treize', 'Quatorze', 'Quinze', 'Seize', 
 const TENS = ['', '', 'Vingt', 'Trente', 'Quarante', 'Cinquante', 'Soixante', 'Soixante-', 'Quatre-', 'Quatre-Vingt'];
 const DEVISESET = [ 'Euro', 'Euros', 'Cent', 'Cents'];
 
+/* Set this value to true or false as explained in README.md file ! */
+const CAPITALIZEFIRST = true;
 
 /* -------------------- Main function -------------------- */ 
-function convertNumToStr(number, capitalizeFirst) {
-    if ((number === 0) && (capitalizeFirst === true)){
+function NUMTOSTR(number) {
+    if ((number === 0) && CAPITALIZEFIRST){
         return 'Zéro euro';
     } else if (number === 0) {
         return "zéro euro";
@@ -38,7 +40,7 @@ function convertNumToStr(number, capitalizeFirst) {
         result += ` ${DEVISESET[0]}`;
     }
 
-    if(capitalizeFirst === true){
+    if(CAPITALIZEFIRST){
         return result.charAt(0).toUpperCase() + result.slice(1).toLowerCase();
     } else {
         return result.toLowerCase();
@@ -198,4 +200,4 @@ function handleParticle(test) {
     }
 }
 
-export default convertNumToStr;
+export default NUMTOSTR;
