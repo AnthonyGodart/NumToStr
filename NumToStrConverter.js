@@ -3,20 +3,28 @@
  * Fonction principale à utiliser comme macro dans Google Sheets.
  *
  * @param {number} number - Le nombre à convertir. Limité à 999 999 999 999,99
+ * @param {boolean} capitalizeFirst -   TRUE si la première lettre doit être en majuscule
+ *                                      FALSE si tout doit être en minuscules
  * @returns {string} - La représentation en lettres du nombre.
  */
 
 const UNITS = ['', 'Un', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf'];
 const TEENS = ['Dix', 'Onze', 'Douze', 'Treize', 'Quatorze', 'Quinze', 'Seize', 'Dix-Sept', 'Dix-Huit', 'Dix-Neuf'];
 const TENS = ['', '', 'Vingt', 'Trente', 'Quarante', 'Cinquante', 'Soixante', 'Soixante-', 'Quatre-', 'Quatre-Vingt'];
-const DEVISESET = [ 'Euro', 'Euros', 'Cent', 'Cents']
+const DEVISESET = [ 'Euro', 'Euros', 'Cent', 'Cents'];
 
 
 /* -------------------- Main function -------------------- */ 
-function convertNumToStr(number) {
-    if (number === 0) {
-        return 'Zéro Euro';
-    }
+function convertNumToStr(number, capitalizeFirst) {
+    if ((number === 0) && (capitalizeFirst === true)){
+        return 'Zéro euro';
+    } else if (number === 0) {
+        return "zéro euro";
+    };
+    
+    if (number < 0){
+        return 'Negative numbers not supported'
+    };
 
     const preComma = convertPreCommaToStr(Math.floor(number)).split(' ').join('-');
 
@@ -30,7 +38,11 @@ function convertNumToStr(number) {
         result += ` ${DEVISESET[0]}`;
     }
 
-    return result;
+    if(capitalizeFirst === true){
+        return result.charAt(0).toUpperCase() + result.slice(1).toLowerCase();
+    } else {
+        return result.toLowerCase();
+    }
 }
 
 /* -------------------- Internal functions -------------------- */ 
