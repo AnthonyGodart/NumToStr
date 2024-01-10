@@ -1,0 +1,20 @@
+{
+  "name": "numtostr",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This tool is designed to convert numeric numbers to their string versions within Google Sheets. The code was originally created as a macro for Google Sheets, and it supports the French language only.",
+  "main": "NumToStrConverter.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyGodart/NumToStr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyGodart/NumToStr/issues"
+  },
+  "homepage": "https://github.com/AnthonyGodart/NumToStr#readme"
+}
